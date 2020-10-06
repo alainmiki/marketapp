@@ -1,0 +1,182 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+About US
+{% endblock title %}
+
+ {% block content %}
+  <!-- Page Content -->
+  <div class="container">
+ <img class="img-fluid rounded-circle mb-4" src="{% static 'imgs/LOGO.pNg' %}" alt="IMAGE FAILED TO LOAD">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 text-center p-5">About Us</h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'products:home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">About Us</li>
+    </ol>
+   
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+      {% if about.image1 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image1}}" alt="Image Fail To Load">
+        {% else %}
+        <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="Image Fail To Load">
+        {% endif %}
+      </div>
+      <div class="col-lg-6">
+        <h2>About {{about.title}}</h2> <a href="{{about.image2}}">{{about.image2}}</a>
+        <p>{{about.description}}</p>
+      </div>
+
+    </div>
+    <!-- /.row -->
+<!-- Other images of Best-Product-->
+
+<hr/>
+
+
+<h1 class="mt-4 mb-3 text-center">Other images of Best-Product</h1>
+
+    <div class="row">
+      <div class="col-lg-4">
+      {% if about.image2 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image2}}" alt="Image Fail To Load">
+       
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+      {% if about.image2 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image2}}" alt="Image Fail To Load">
+       
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+      {% if about.image3 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image3}}" alt="Image Fail To Load">
+       
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+      {% if about.image4 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image4}}" alt="Image Fail To Load">
+       
+        {% endif %}
+      </div>
+      <div class="col-lg-4">
+      {% if about.image5 %}
+      
+       <img class="img-fluid rounded mb-4" src="{{about.image5}}" alt="Image Fail To Load">
+       
+        {% endif %}
+      </div>
+      </div>
+      
+<hr/>
+
+<h1 class="mt-4 mb-3 text-center">Our Links and Reachouts</h1>
+ <div class="row  bg-secondary">
+      <div class="col-lg-2">
+      {% if about.facebook_page1 %}
+       <a href="{{about.facebook_page1}}"><li class="  btn  btn-sm btn-primary fa  fa-facebook " ><br>facebook</li></a>
+        {% endif %}
+      </div>
+
+      <div class="col-lg-3">
+      {% if about.facebook_page2 %}
+       <a href="{{about.facebook_page2}}"><li class=" btn  btn-sm btn-primary fa  fa-facebook " ><br>facebook</li></a>
+        {% endif %}
+      </div>
+
+      <div class="col-lg-3">
+      {% if about.youtube_channel %}
+       <a href="{{about.youtube_channel}}"><li class="btn btn-sm  btn-danger fa  fa-youtube-play  " ><br>Youtube</li></a>
+        {% endif %}
+      </div>
+
+      <div class="col-lg-2">
+      {% if about.instagram  %}
+       <a href="{{about.instagram }}"><li class="btn btn-sm  btn-danger fa  fa-instagram  " ><br>Instgram</li></a>
+        {% endif %}
+      </div>
+
+       <div class="col-lg-2">
+      {% if about.github  %}
+       <a href="{{about.github }}"><li class="btn btn-sm btn-success fa  fa-github  " ><br>Github</li></a>
+        {% endif %}
+      </div>
+
+</div>
+<hr/>
+    <!-- Team Members -->
+    <h2>Our Team</h2>
+
+    <div class="row">
+    {% for member in members %}
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100 text-center">
+         {% if member.image %}
+          <img class="card-img-top" src="{{member.image}}" alt="">
+          {% endif %}
+          <div class="card-body">
+            <h4 class="card-title">{{member.name}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{member.position}}</h6>
+            <p class="card-text">{{member.description}}.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#">{{member.email}}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  
+    </div>
+    <!-- /.row -->
+
+    <!-- Our Customers -->
+    <h2>Our Services</h2>
+    <div class="row">
+    {% for service in services %}
+      <div class="col-lg-6 col-sm-4 mb-4">
+      <strong>{{service.title|title}}</strong>
+      <p>{{service.description}}</p>
+      </div>
+      {% endfor %}
+      </div>
+
+      
+      <h2>Our Customers</h2>
+      <div class="row">
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+      <div class="col-lg-2 col-sm-4 mb-4">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+ {% endblock content %}
+
+ 

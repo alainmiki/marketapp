@@ -1,0 +1,100 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}
+  Best-Products
+  {% endblock title %}</title>
+  <link href="{% static 'imgs/LOGO.png' %}" rel="icon">
+  <link href="{% static 'imgs/LOGO.png' %}" rel="apple-touch-icon"> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+   <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+
+<style>
+  #bg{
+    background-image: url('{%static "imgs/f1.jpg" %}');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+
+  }
+</style>
+</head>
+
+<body>
+
+  {% include 'navbar.html' %}
+
+  
+
+  {% block content %}
+
+
+  {% endblock content %}
+  <!-- Page Content -->
+<h3 class="text-center p-5 "> 
+<a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=codermiki-20&linkCode=ur2&linkId=07dde427e14ee4510a26e6a19522d2ad&camp=1789&creative=9325&index=aps&keywords=best computer best phones best books joweleries">more products</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=codermiki-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</h3>
+<hr>
+<div class="display-flex" target="_blank" id="amzn-assoc-ad-8768cee5-c46c-4dfb-bd53-43450f4eceff"></div><script async src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=8768cee5-c46c-4dfb-bd53-43450f4eceff"></script>
+
+<script type="text/javascript">
+amzn_assoc_placement = "adunit0";
+amzn_assoc_search_bar = "true";
+amzn_assoc_tracking_id = "codermiki-20";
+amzn_assoc_search_bar_position = "bottom";
+amzn_assoc_ad_mode = "search";
+amzn_assoc_ad_type = "smart";
+amzn_assoc_marketplace = "amazon";
+amzn_assoc_region = "US";
+amzn_assoc_title = "Shop Related Products";
+amzn_assoc_default_search_phrase = "laptops tablets";
+amzn_assoc_default_category = "All";
+amzn_assoc_linkid = "fdb8178c0aa10e28be9a141f29f8c5a0";
+</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark text-center text-white ">
+
+    <h1 class=" fa fa-address-card" > Developer reachouts / contacts
+    </h1>
+    <div class="bg-secondary ">
+    
+    <a class="btn btn-sm  btn-success" href="tel:+654013095"><li class="fa fa-whatsapp" ></li></a>
+    <a class=" btn btn-sm btn-success" href="https://github.com/alainmiki"><li class="fa fa-github " ></li></a>
+    <a class=" btn btn-sm  btn-danger " href="https://www.youtube.com/feed/my_videos"><li class="fa  fa-youtube-play " ></li></a>
+    
+  <a class=" btn  btn-sm btn-primary" href="https://web.facebook.com/ALAIN-MIKI"><li class="fa  fa-facebook " ></li></a>
+  
+
+  </div > 
+
+
+      <p class="m-0 text-center text-white">Copyright &copy;bestproduct <script> document.write(new Date().getUTCFullYear()) </script>
+       All rights reserved | This site is design & developed with <i class="  fa fa-heart-o text-danger " aria-hidden="true"></i> by: <a href="https://web.facebook.com/ALAIN-MIKI" target="_blank">Alain Miki Echu (Boy Miki)</a>
+      </p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Best-Products home
+{% endblock title %}
+
+
+
+
+
+{% block content %}
+{% include 'header.html' %}
+  <div class="container">
+    <div class=" text-center text-light p-5 bg-dark mb-2 rounded-circle" id="bg">
+    <h1 class="my-3">Welcome to Best-Products</h1>
+
+
+    <!-- Products Section -->
+    <h2 class="text-center text-light bg-primary dark rounded-circle container">Hight Rating Products</h2>
+    <p class="bg-primary">we get you close to good products ranging from electronic,educational to body ware products etc. <br>Make a good choice of product because we have a lot here for you </p>
+    <h3  ><div class="text-center text-light bg-primary dark rounded-circle "> #BEST-PRODUCTS</div> .........we bring customers and products together</h3>
+    </div> 
+    <div class="row">
+    {% for product in products %}
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+        <img  class="" src="{{product.image}}" height=250>
+          {% comment %} {{product.image_link1|safe}} {% endcomment %}
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{{product.text_link}} " target='_blank'>{{product.title|truncatewords:5}}</a>
+            </h4>
+            <p class="card-text">{{product.description|truncatewords:30}}</p>
+            <a class="btn-secondary" href="{% url 'products:product_details' product.id %}">Read More..</a>
+              <br>
+              {% if product.discount_price %}
+               <a class=" btn-success col-4" href="{{product.text_link}} "><del>price: ${{product.price}}</del></a>
+          <a class=" btn-primary col-7 " href="{{product.text_link}} ">discount price: ${{product.discount_price}}</a>
+          {% else %}
+           <a class=" btn-success col-4" href="{{product.text_link}} ">price: ${{product.price}}</a>
+          {% endif %}
+            
+          </div>
+         
+        </div>
+      </div>
+      {% endfor %}
+      
+    </div>
+    <!-- /.row -->
+<h3 class="text-center p-5 "> 
+<a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=codermiki-20&linkCode=ur2&linkId=07dde427e14ee4510a26e6a19522d2ad&camp=1789&creative=9325&index=aps&keywords=best computer best phones best books joweleries">more products</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=codermiki-20&l=ur2&o=1" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</h3>
+    <!-- Features Section -->
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Our Services and deals</h2>
+        <p>The BEST-Products Services includes:</p>
+        <div class="row">
+      {% for service in services %}
+      <div class="col-lg-6 col-sm-4 mb-4">
+      <strong>{{service.title|title}}</strong>
+      <p>{{service.description}}</p>
+      </div>
+      {% endfor %}
+      </div>
+        
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid rounded" src="{% static 'imgs/f1.jpg' %}" alt="no image to show">
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+  </div>
+
+{% endblock content %}

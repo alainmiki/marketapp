@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+
+{% block title %}
+detail page
+{% endblock title %}
+
+{% block content %}
+
+  <div class="container  p-5 mt-5 text-dark" > 
+  <h2>{{product.title|title}}</h2>
+  <h3>{{product.brand}}</h3>
+  <img width="100%" src="{{product.image}}" alt="">
+<hr class="bg-primary">
+  <blockquote class="bg-secondary text-light">
+    <h3 class=" text-center" ><u><i>Configuration:</i></u></h3>
+      <pre class="bg-secondary text-light">
+        {{product.config}}
+      </pre>
+  </blockquote >
+  <hr class="bg-dark" >
+  <h3 class=" text-center" ><u><i>Description:</i></u></h3>
+  <div class="row">
+    <div class="col-lg-8">
+      <blockquote class="bg-dark text-light">
+      {{product.description|safe}}
+  </blockquote>
+    </div>
+    <div class="col-4">
+      
+      {% if product.other_image %}
+       <img width="100%" src="{{product.other_image}}" alt="">
+      {% endif %}
+      {% if product.other_image1 %}
+       <img width="100%" src="{{product.other_image1}}" alt="">
+      {% endif %}
+        
+    </div>
+  </div>
+  <hr class="bg-primary">
+<p>Price:
+{% if product.discount_price %}
+<del class="bg-danger">${{product.price}}</del>
+<strong class="bg-success">${{product.discount_price}}</strong>
+{% else %}
+<strong class="bg-success">${{product.price}}</strong>
+    
+{% endif %}</p>
+    
+
+<p>Please click on this link <a href="{{product.text_link}}">Here</a> to buy or hit/click any of the images below to buy this product </p>
+
+<div class="row">
+    <div class="col-lg-6">
+ {{product.image_link1|safe}}
+</div>
+ <div class="col-lg-6">
+   {{product.amazon_link|safe}}
+  </div>
+</div>
+
+  </div>
+{% endblock content %}

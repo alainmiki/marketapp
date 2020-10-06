@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}
+Services
+{% endblock title %}
+  <!-- Page Content -->
+ {% block content %}
+
+  <div class="container">
+  <div class="bg-success" style="background:url('{% static 'imgs/s.jpg' %}');background-repeat:no-repeat;background-size:cover;">
+ <img class="img-fluid rounded-circle mb-4" src="{% static 'imgs/LOGO.pNg' %}" alt="IMAGE FAILED TO LOAD">
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3 text-center p-5">Our Services</h1>
+</div>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="{% url 'products:home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Our Services</li>
+    </ol>
+
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+    {% for service in services %}
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">{{service.title|title}}</h4>
+          <div class="card-body">
+            <p class="card-text">{{service.description}}....</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+ {% include 'header.html' %}
+
+ {% endblock content %}
